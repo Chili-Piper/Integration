@@ -1,0 +1,19 @@
+<script src="https://js.chilipiper.com/marketing.js" type="text/javascript" async></script>
+<script>
+  const cpTenantDomain = "[[cp_domain]]"; // REPLACE and remove square brackets
+  const cpRouterName = "[[cp_router]]"; // REPLACE and remove square brackets
+  var lead
+window.addEventListener("message", function (event) {
+   if (event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
+     window.lead = {}; for (key in event.data.data) { lead[event.data.data[key].name] = event.data.data[key].value; }
+   }
+});
+window.addEventListener("message", function (event) {
+   if (event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmitted")
+      ChiliPiper.submit(cpTenantDomain, cpRouterName, {
+         map: true,
+         lead: lead
+      });
+   }
+);
+</script>
