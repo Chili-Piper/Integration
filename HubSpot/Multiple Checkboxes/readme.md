@@ -5,3 +5,5 @@ There are 2 different methods you can use to submit data:
   * This will make submissions more reliable and make sure Chili Piper is only called when HubSpot receives the form submission
 * Submit Button event
   * This will run Chili Piper code once the Submit button is clicked. This will still check if all required fields have something filled in, however, there is no additional validation being performed, for example, on emails and phone numbers.
+  * Event Listner Method 
+  * Uses the event listener onFormSubmit from Hubspot to trigger Chili Piper and capture all the checked boxes and submit to chili
